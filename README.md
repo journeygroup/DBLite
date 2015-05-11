@@ -44,6 +44,8 @@ Journey\DBLite::config($config);
 Journey\DBLite::query('SELECT * FROM mytable');
 ```
 
+**When DBLite is instantiated, it will check for a the presence a database, if it doesn't exist, it will automatically create the database and add the tables in the configuration file.**
+
 ### Querying
 
 Any call to a [PDO method](http://php.net/manual/en/book.pdo.php) is valid, and methods can be called statically or on an instance of DBLite. When called statically, only configuration options of the _first instantiated_ database will be used.

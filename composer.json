@@ -1,0 +1,14 @@
+{
+    "name": "journey/dblite",
+    "description": "Micro SQLite+PDO wrapper for use in micro-frameworks; written in php",
+    "keywords": ["sqlite","database","pdo"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "Journey\\DBLite\\": "src"
+        }
+    }
+}

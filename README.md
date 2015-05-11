@@ -20,9 +20,9 @@ DBLite only requires 1 configuration option (its not called *lite* for nothing).
 
 ```php
 $config = [
-    'storage' => 'path/to/storage/dir',  # Required storage path
-    'name' => 'your-database.db',        # (optional) database name
-    'tables' => [                        # (optional) tables to create
+    'storage' => 'path/to/storage/dir',             # Required storage path
+    'name' => 'your-database.db',                   # (optional) database name
+    'tables' => [                                   # (optional) tables to create
         'table_one' => 'CREATE TABLE table_one ...' # (optional) CREATE TABLE sql statement
     ]
 ];
@@ -37,10 +37,10 @@ $db = new Journey\DBLite($config);
 *or*
 
 ```php
-// Configure once for your application
+# Configure once for your application
 Journey\DBLite::config($config);
 
-// Access methods statically
+# Access methods statically
 Journey\DBLite::query('SELECT * FROM mytable');
 ```
 

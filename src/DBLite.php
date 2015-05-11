@@ -93,7 +93,8 @@ class DBLite
             ];
         }
 
-        return array_replace_recursive($config, $options);
+        $config = array_replace_recursive($config, $options);
+        return $config;
     }
 
 

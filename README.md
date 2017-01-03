@@ -11,7 +11,7 @@ Small serverless databases can be extremely useful in micro frameworks. SQLite (
 
 To add DBLite to your project, just use composer:
 
-    composer require journeygroup/dblite @dev-master
+    composer require journeygroup/dblite dev-master
 
 
 ### Configuration

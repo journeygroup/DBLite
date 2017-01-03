@@ -19,9 +19,8 @@ class DBLite
      */
     public function __construct($config = array())
     {
-        // Load our configuration statically
+        $config = is_array($config) ? $config : [];
         $this->config = static::config($config);
-
 
         // Check our storage paths
         if (!$this->config['storage'] || !is_dir($this->config['storage'])) {
@@ -51,7 +50,7 @@ class DBLite
                     throw new DBLiteException('Unable to create a database because the storage directory is not writable');
                 }
             }
-
+            static::factory(null, $this);
         // Catch any instantiation errors
         } catch (Exception $e) {
             throw new DBLiteException('Unable to connect to database: ' . $e->getMessage());
@@ -104,9 +103,13 @@ class DBLite
      * @param Array  $config  Configuration options to use for a new instance
      * @return DBLite         The active DBLite object (or a new one)
      */
-    public static function factory($config = null)
+    public static function factory($config = null, $replaceInstance = false)
     {
         static $instance;
+        
+        if ($replaceInstance) {
+            $instance = $replaceInstance;
+        }
 
         if (!$instance) {
             $instance = new self($config);
